@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+
+{% block captura  %}
+	<h2 class="bg-primary">Captura</h2>
+	<form action="" class="form-horizontal" role="form" method="post" id="tbl1">{% csrf_token %}
+		<table class="table table-condensed table-bordered">
+			{{form.as_table}}
+		</table>
+		<input class="btn btn-primary" type="submit" value="Guardar">
+	</form>
+
+{% endblock %}

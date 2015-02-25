@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block captura  %}
+	<h2 class="bg-primary">Captura de folios</h2>
+	<section id="cuerpo">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" id="btnNuevo">Nuevo folio</button>
+		<table class="table table-responsive table-bordered" id="busqueda">
+			<thead>
+				<th>
+					<td>Folio</td>
+					<td>Medico</td>
+					<td>Especialidad</td>
+					<td>Fecha</td>
+				</th>
+			</thead>
+			<tbody>
+				{% for registro in captura %}
+					<tr>
+						<td>{{registro.folio}}</td>
+						<td>{{registro.nombre}}</td>
+						<td>{{registro.especialidad}}</td>
+						<td>{{registro.fecha}}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</section>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="myModalLabel">Nuevo folio</h4>
+				</div>
+				<div class="modal-body">
+					¿Desea iniciar la captura de un nuevo folio?
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+					<a href="/generales">
+						<button type="button" class="btn btn-primary">Aceptar</button>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
