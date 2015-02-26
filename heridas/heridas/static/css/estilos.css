@@ -14,13 +14,6 @@
 
 }
 
-
-h2
-{
-	text-align: center;
-	margin:auto;
-	padding: 0.2em 0 0.2em 0;
-}
 #cuerpo
 {
 	margin: auto;
@@ -29,7 +22,24 @@ h2
 #btnNuevo
 {
 	margin:0.5em 0 0.5em 0;
+}
 
+.error
+{
+	text-decoration: none;
+	color: red;
+}
+
+h2
+{
+	text-align: center;
+	margin:auto;
+	padding: 0.2em 0 0.2em 0;
+}
+
+label
+{
+	
 }
 
 @media screen and (min-width: 800px) {

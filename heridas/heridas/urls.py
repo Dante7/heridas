@@ -14,6 +14,8 @@ urlpatterns = patterns('',
     url(r'^generales/', 'captura.views.CapTbl1'),
     url(r'^filtros/', 'captura.views.CapTbl2'),
     url(r'^dime/', 'captura.views.CapTbl3'),
+    url(r'^txp5/', 'captura.views.CapTbl4'),
+    url(r'^txp6/', 'captura.views.CapTbl5'),
 
 
     # Uncomment the admin/doc line below to enable admin documentation:

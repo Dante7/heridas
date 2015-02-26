@@ -11,20 +11,22 @@
 	<h2 class="bg-primary">Captura</h2>
 	<form action="" class="form-horizontal" role="form" method="post" id="tbl1">{% csrf_token %}
 		<table class="table table-condensed table-bordered">
-		<!--{{form.as_table}}-->
-		{% for campo in form.visible_fields  %}
+			<thead>
+			{% for campo in form.visible_fields  %}
+					<td>{{campo.label}}</td>
+			{% endfor %}
+			</thead>
 			<tr>
-				<td>{{campo.label}}</td>
-				<td>{{campo}}</td>
-				{% if campo.errors %}
-					<td>
+			{% for campo in form.visible_fields  %}
+					<td>{{campo}}
+					{% if campo.errors %}
 						<a href="#" data-toggle="tooltip" data-original-title="{{campo.errors.as_text}}" class="error">
 							<span class="glyphicon glyphicon-exclamation-sign" data-toggle="tooltip" data-original-title="{{campo.errors.as_text}}" aria-hidden="true"></span>
 						</a>
+					{% endif %}
 					</td>
-				{% endif %}
+			{% endfor %}
 			</tr>
-		{% endfor %}
 		</table>
 		<input class="btn btn-primary" type="submit" value="Guardar">
 	</form>

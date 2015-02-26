@@ -87,3 +87,60 @@ def CapTbl2(request,folio=''):
 		resultado = {'form':formulario}
 	
 	return render_to_response(template, resultado, context_instance=RequestContext(request))
+
+@login_required(login_url='/')
+def CapTbl3(request,folio=''):
+	template = 'formularios.html'
+	if request.method=='POST':
+		formulario = FrmTbl3(request.POST)
+		if formulario.is_valid():
+			formulario.save()
+			resultado = {'form':formulario}
+			return HttpResponseRedirect('/dimen')
+		else:
+			resultado = {'form':formulario}
+		return render_to_response(template, resultado, context_instance=RequestContext(request))
+	else:
+		formulario = FrmTbl3()
+		pass
+		resultado = {'form':formulario}
+	
+	return render_to_response(template, resultado, context_instance=RequestContext(request))
+
+@login_required(login_url='/')
+def CapTbl4(request,folio=''):
+	template = 'formularios.html'
+	if request.method=='POST':
+		formulario = FrmTbl4(request.POST)
+		if formulario.is_valid():
+			formulario.save()
+			resultado = {'form':formulario}
+			return HttpResponseRedirect('/dimen')
+		else:
+			resultado = {'form':formulario}
+		return render_to_response(template, resultado, context_instance=RequestContext(request))
+	else:
+		formulario = FrmTbl4()
+		pass
+		resultado = {'form':formulario}
+	
+	return render_to_response(template, resultado, context_instance=RequestContext(request))
+
+@login_required(login_url='/')
+def CapTbl5(request,folio=''):
+	template = 'frm_tx.html'
+	if request.method=='POST':
+		formulario = FrmTbl5(request.POST)
+		if formulario.is_valid():
+			formulario.save()
+			resultado = {'form':formulario}
+			return HttpResponseRedirect('/dimen')
+		else:
+			resultado = {'form':formulario}
+		return render_to_response(template, resultado, context_instance=RequestContext(request))
+	else:
+		formulario = FrmTbl5()
+		pass
+		resultado = {'form':formulario}
+	
+	return render_to_response(template, resultado, context_instance=RequestContext(request))
